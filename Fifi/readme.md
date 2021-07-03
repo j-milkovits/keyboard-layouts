@@ -1,12 +1,12 @@
 # Fifi
 
-![Fifi](imgur.com image replace me!)
+![Fifi](https://github.com/raychengy/fifi_split_keeb/blob/main/assets/fifi_keeb.png)
 
 *A short description of the keyboard/project*
 
-* Keyboard Maintainer: [j-milkovits](https://github.com/yourusername)
-* Hardware Supported: *The PCBs, controllers supported*
-* Hardware Availability: *Links to where you can find this hardware*
+* Keyboard Maintainer: QMK folder made by j-milkovits / keyboard by https://github.com/raychengy/fifi_split_keeb
+* Hardware Supported: AVR Chips
+* Hardware Availability: https://github.com/raychengy/
 
 Make example for this keyboard (after setting up your build environment):
 
