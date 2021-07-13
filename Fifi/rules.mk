@@ -23,5 +23,4 @@ AUDIO_ENABLE = no           # Audio output
 
 SPLIT_KEYBOARD = yes
 
-OLED_DRIVER_ENABLE = yes
-WPM_ENABLE = yes
+
