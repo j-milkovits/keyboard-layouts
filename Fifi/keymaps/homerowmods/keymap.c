@@ -15,10 +15,10 @@
  */
 #include QMK_KEYBOARD_H
 #include <stdio.h>
-char wpm_str[10];
+// char wpm_str[10];
 
-#define _COLEMAK 0
-#define _QWERTY 1
+#define _QWERTY 0
+#define _COLEMAK 1
 #define _MEDIA 2
 #define _NAV 3
 #define _MOUSE 4
@@ -55,12 +55,13 @@ char wpm_str[10];
 #define L_FNC LT(FN,    KC_ESC)  
 #define L_GAM TG(GAME)
 #define L_QWE TG(QWERTY)
+#define L_COL TG(COLEMAK)
  
 #define WinSCS SGUI(KC_S) 
 #define Euro LCA(KC_5)
 
-#define COLEMAK 0
-#define QWERTY 1
+#define QWERTY 0
+#define COLEMAK 1
 #define MEDIA 2
 #define NAV 3
 #define MOUSE 4
@@ -71,18 +72,18 @@ char wpm_str[10];
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    [_COLEMAK] = LAYOUT(
-        KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,       KC_J,    KC_L,    KC_U,     KC_Y,    KC_QUOT,
-        CHOME_A, CHOME_R, CHOME_S, CHOME_T, KC_G,       KC_M,    CHOME_N, CHOME_E,  CHOME_I, CHOME_O,
-        KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,       KC_K,    KC_H,    KC_COMM,  KC_DOT,  KC_SLSH,
-                          L_MED,   L_NAV,   L_MOU,      L_SYM,   L_NUM,   L_FNC
-    ),
-
     [_QWERTY] = LAYOUT(
         KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,       KC_Y,    KC_U,    KC_I,     KC_O,    KC_P,   
         HOME_A,  HOME_S,  HOME_D,  HOME_F,  KC_G,       KC_H,    HOME_J,  HOME_K,   HOME_L,  KC_QUOT,
         KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,       KC_N,    KC_M,    KC_COMM,  KC_DOT,  KC_SLSH,
                           L_MED,   L_NAV,   L_MOU,      L_SYM,   L_NUM,   L_FNC 
+    ),
+    
+    [_COLEMAK] = LAYOUT(
+        KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,       KC_J,    KC_L,    KC_U,     KC_Y,    KC_QUOT,
+        CHOME_A, CHOME_R, CHOME_S, CHOME_T, KC_G,       KC_M,    CHOME_N, CHOME_E,  CHOME_I, CHOME_O,
+        KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,       KC_K,    KC_H,    KC_COMM,  KC_DOT,  KC_SLSH,
+                          L_MED,   L_NAV,   L_MOU,      L_SYM,   L_NUM,   L_FNC
     ),
 
     [_MEDIA] = LAYOUT(
@@ -129,10 +130,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [_GAME] = LAYOUT(
-        KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,       KC_Y,    KC_U,    KC_I,     KC_O,    KC_P,    
-        KC_A,    KC_S,    KC_D,    KC_D,    KC_F,       KC_H,    KC_J,    KC_K,     KC_L,    KC_QUOT, 
-        KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,       KC_N,    KC_M,    KC_COMM,  KC_DOT,  KC_SLSH, 
-                          KC_ESC,  KC_SPC,  KC_TAB,     KC_SPC,  KC_ENT,  L_GAM    
+        KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,      KC_Y,    KC_U,    KC_I,     KC_O,    KC_P,    
+        KC_LSFT, KC_A,    KC_S,    KC_D,    KC_F,      KC_H,    KC_J,    KC_K,     KC_L,    KC_QUOT, 
+        KC_LCTL, KC_Z,    KC_X,    KC_C,    KC_V,      KC_N,    KC_M,    KC_COMM,  KC_DOT,  KC_SLSH, 
+                          KC_LALT,  KC_SPC,  KC_ESC,   KC_SPC,  KC_ENT,  L_GAM    
     ),
 };
 
