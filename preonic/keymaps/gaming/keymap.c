@@ -1,7 +1,8 @@
 #include QMK_KEYBOARD_H
 
 #define GAMING 0
-#define FKEYS 1
+#define GAMING_ALT 1
+#define FKEYS 2
 
 socd_cleaner_t socd_opposing_pairs[] = {
     {{KC_A, KC_D}, SOCD_CLEANER_LAST},
@@ -19,10 +20,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_LCTL, KC_LGUI, KC_LALT, KC_COMM, KC_DOT,  KC_SPC,  KC_SPC,  MO(FKEYS), KC_ENT,  KC_LEFT, KC_DOWN, KC_RIGHT
 ),
 
+[GAMING_ALT] = LAYOUT_preonic_grid(
+  KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    	KC_8,    KC_9,    KC_0,    KC_DEL,
+  KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    	KC_I,    KC_O,    KC_P,    KC_BSPC,
+  KC_SLSH, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    	KC_K,    KC_L,    KC_QUOT, KC_SCLN,
+  KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    	KC_COMM, KC_DOT,  KC_UP,   KC_RSFT,
+  KC_LCTL, KC_LGUI, KC_COMM, KC_DOT,  KC_LALT, KC_SPC,  KC_SPC,  MO(FKEYS), KC_ENT,  KC_LEFT, KC_DOWN, KC_RIGHT
+),
+
 [FKEYS] = LAYOUT_preonic_grid(
   KC_F11,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,     KC_F8,   KC_F9,   KC_F10,  KC_F12,
   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,   KC_TRNS, KC_TRNS, KC_TRNS, SOCDTOG,
-  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,   KC_TRNS, KC_TRNS, KC_TRNS, TG(GAMING_ALT),
   KC_TRNS, KC_MPRV, KC_MPLY, KC_MNXT, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,   KC_TRNS, KC_TRNS, KC_TRNS, QK_BOOT
 ),
